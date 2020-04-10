@@ -21,6 +21,8 @@ public class Main {
             }
         }
 
+        System.out.println(personCounter);
+        
         try(BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"))){
             for(int i=0;i<personCounter;i++) {
                     bw.write(stringWorker(peopleInfo[i]));
@@ -30,9 +32,6 @@ public class Main {
 
 
     }
-
-
-
 
     public static String stringWorker(String personInfo){
         String temp = personInfo;
