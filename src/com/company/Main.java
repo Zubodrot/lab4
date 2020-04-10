@@ -8,20 +8,38 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         FileWriter fw = new FileWriter("output.txt");
-        String[] peopleinfo = new String[10];
+        String[] peopleInfo = new String[10];
+        int personCounter = 0;
         try (BufferedReader br = new BufferedReader(new FileReader("input.txt"))) {
 
             int temp=0;
             String s="";
             while ((s = br.readLine()) != null) {
-                peopleinfo[temp]=s;
+                peopleInfo[temp]=s;
                 temp++;
+                personCounter = temp;
             }
         }
 
-        for(String temp:peopleinfo){
-            System.out.println(temp);
+        try(BufferedWriter bw = new BufferedWriter(new FileWriter("output.txt"))){
+            for(int i=0;i<personCounter;i++) {
+                    bw.write(stringWorker(peopleInfo[i]));
+                    bw.newLine();
+            }
         }
 
+
+    }
+
+
+
+
+    public static String stringWorker(String personInfo){
+        String temp = personInfo;
+        temp = temp.replaceAll("\\s","");
+
+
+
+        return temp;
     }
 }
