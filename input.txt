@@ -1,2 +1,2 @@
-ИванИванов|27|+7999000 1 1 11|example@@yandex..ru
-Василий Пупкилий|10|89123456789|vasiliy@gmail.com
+IvanIvanov|27|+7999000 1 1 11|example@@yandex..ru
+Vasiliy Pupkiliy|10|89123456789|vasiliy@gmail.com

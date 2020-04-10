@@ -36,7 +36,16 @@ public class Main {
 
     public static String stringWorker(String personInfo){
         String temp = personInfo;
-        temp = temp.replaceAll("\\s","");
+
+        temp = temp.replaceAll("\\s",""); //убираем пробелы
+        temp = temp.replaceAll("[|][+7]", "|+7(");
+        temp = temp.replaceAll("[|][8]", "|+7("); //меняем 8 на +7
+        StringBuffer temp2 = new StringBuffer(temp);
+        temp2.insert((temp.indexOf("(")+4), ")");
+        temp = temp2.toString(); //добавляем скобки к номеру телефона
+        temp = temp.replaceAll("(@){2}","@"); //убираем излишние @
+        temp = temp.replaceAll("[.]{2}","."); //убираем излишние .
+
 
 
 
